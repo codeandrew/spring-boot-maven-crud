@@ -45,7 +45,7 @@ extends ResponseEntityExceptionHandler {
     HttpHeaders headers, HttpStatus status, WebRequest request){
 
         ExceptionResponse exceptionResponse =
-                new ExceptionResponse(new Date(), ex.getMessage(),
+                new ExceptionResponse(new Date(), "Validation Failed",
                         ex.getBindingResult().toString() );
 
         return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
